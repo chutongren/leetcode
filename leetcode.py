@@ -15,3 +15,12 @@ class Solution:
                 if(str1[:i] * (len(str1)//i) == str1 and str1[:i] * (len(str2)//i) == str2): # 每次对两个字符串做拼接和比较，耗时 O(len1 + len2)
                     return str1[:i]
         return ''
+
+
+
+# 1207. 独一无二的出现次数
+# 每个数的出现次数都是独一无二的，而不是 每个数都是独一无二的
+class Solution:
+    def uniqueOccurrences(self, arr: List[int]) -> bool:
+        num = Counter(arr).values() # count
+        return len(set(num)) == len(num) # set去掉了重复的元素后，长度还是不变，说明无重复
